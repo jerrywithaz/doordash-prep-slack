@@ -1,25 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Sidebar from './components/app/Sidebar';
+import Box from './components/layout/Box';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box flex={1} vertical height="100%" width="100%">
+        <Box backgroundColor="red" height={50}></Box>
+        <Box flex={1} horizontal>
+          <Box width={300}backgroundColor="blue">
+            <Sidebar />
+          </Box>
+          <Box flex={1} backgroundColor="green"></Box>
+        </Box>
+    </Box>
   );
 }
 
