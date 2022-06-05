@@ -3,7 +3,8 @@ import { useCacheKey } from "../cache";
 
 function useQuery<Data extends any, Params extends Record<string, unknown>>(
   key: string,
-  func: (params?: Params) => Promise<Data>
+  func: (params?: Params) => Promise<Data>,
+  params?: Params
 ) {
   const cacheKey = useCacheKey<Data>(key);
   const [loading, setLoading] = useState(false);
@@ -30,9 +31,9 @@ function useQuery<Data extends any, Params extends Record<string, unknown>>(
 
   useEffect(() => {
     (async () => {
-        await query();
+        await query(params);
     })();
-  }, [key]);
+  }, [key, params]);
 
   return { refetch: query, data: cacheKey.data, loading, error };
 }

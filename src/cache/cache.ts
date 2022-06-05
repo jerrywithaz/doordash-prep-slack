@@ -20,12 +20,13 @@ const cacheStore = create<Cache>((set) => ({
     },
     remove: (key) => {
         set((prevData) => {
-            delete prevData.cache[key];
+            const newCache = { ...prevData.cache };
+
+            delete newCache[key];
+            
             return {
                 ...prevData,
-                cache: {
-                    ...prevData.cache,
-                }
+                cache: newCache
             }
         });
     },
