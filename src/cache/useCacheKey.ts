@@ -7,11 +7,11 @@ function useCacheKey<Data extends any = any>(key: string) {
     
     const set = useCallback((data: Data) => {
         cache.set(key, data)
-    }, [cache.set]);
+    }, [key]);
 
     const remove = useCallback(() => {
         cache.remove(key)
-    }, [cache.remove]);
+    }, [key]);
 
     return { set, data, remove };
 }

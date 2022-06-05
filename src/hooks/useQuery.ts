@@ -32,7 +32,7 @@ function useQuery<Data extends any, Params extends Record<string, unknown>>(
     (async () => {
         await query();
     })();
-  }, []);
+  }, [key]);
 
   return { refetch: query, data: cacheKey.data, loading, error };
 }

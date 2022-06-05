@@ -32,7 +32,7 @@ const Channel: React.FC = () => {
         />
         <Box vertical flex={1}>
             <Box horizontal>
-                <Text color="#ffffff" marginRight={10}>{item.user.name}</Text>
+                <Text color="#ffffff" marginRight={10} bold>{item.user.name}</Text>
                 <Text color="#ffffff">{new Date(item.date).toLocaleTimeString()}</Text>
             </Box>
           <Text color="#ffffff">{item.content}</Text>
