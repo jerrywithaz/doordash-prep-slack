@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TextProps } from './Text.types';
+import { StyledTextProps } from './Text.types';
 
 function propToCss(key: string, value?: string | number, suffix: string = 'px') {
     if (value === undefined) {
@@ -11,11 +11,15 @@ function propToCss(key: string, value?: string | number, suffix: string = 'px') 
     return `${key}: ${value}${suffix};`;
 }
 
-export const Text = styled.span<TextProps>`
-    ${({ color, padding, margin, fontWeight }) => `
+export const Text = styled.span<StyledTextProps>`
+    ${({ color, padding, margin, fontWeight, display, flex, marginRight }) => `
         ${propToCss("color", color)}
-        ${propToCss("padding", padding, "")}
-        ${propToCss("margin", margin, "")}
+        ${propToCss("padding", padding)}
+        ${propToCss("margin", margin)}
+        ${propToCss("margin-right", marginRight)}
         ${propToCss("font-weight", fontWeight, "")}
+        ${propToCss("display", display, "")}
+        ${propToCss("flex", flex, "")}
+        text-decoration: none;
     `}
 `;

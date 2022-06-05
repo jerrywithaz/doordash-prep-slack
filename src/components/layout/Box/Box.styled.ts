@@ -21,7 +21,7 @@ export const Box = styled.div<BoxProps>`
         ${propToCss("width", width)}
         ${propToCss("height", height)}
         ${propToCss("background-color", backgroundColor, "")}
-        ${propToCss("padding", padding, "")}
-        ${propToCss("margin", margin, "")}
+        ${propToCss("padding", padding)}
+        ${propToCss("margin", margin)}
     `}
 `;
