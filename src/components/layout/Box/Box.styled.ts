@@ -1,20 +1,7 @@
 import styled from "styled-components";
 import { isSpacingKey } from "../../../theme";
+import propToCss from "../../../utils/propToCss";
 import { BoxProps } from "./Box.types";
-
-function propToCss(
-  key: string,
-  value?: string | number,
-  suffix: string = "px"
-) {
-  if (value === undefined) {
-    return "";
-  }
-  if (typeof value === "string") {
-    return `${key}: ${value};`;
-  }
-  return `${key}: ${value}${suffix};`;
-}
 
 const Box = styled.div<BoxProps>`
   ${({

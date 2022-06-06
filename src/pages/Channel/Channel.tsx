@@ -43,7 +43,7 @@ const Channel: React.FC = () => {
 
   return (
     <Box vertical flex={1}>
-      <List data={query.data ?? []} renderItem={renderItem} />
+      <List data={query.data ?? []} renderItem={renderItem} loading={query.loading} />
     </Box>
   );
 };

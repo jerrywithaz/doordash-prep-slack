@@ -15,7 +15,7 @@ const Accordion: React.FC<React.PropsWithChildren<AccordionProps>> = ({
 
   return (
     <Box vertical>
-      <AccordionHeader onClick={() => setOpen(!open)} padding="10px 10px">
+      <AccordionHeader onClick={() => setOpen(!open)} padding="s">
           <Text color="#ffffff" bold>{title}</Text>
       </AccordionHeader>
       {open && <Box paddingLeft="s" paddingRight="s">{children}</Box>}

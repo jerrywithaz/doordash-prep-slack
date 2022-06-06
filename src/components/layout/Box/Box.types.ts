@@ -27,4 +27,4 @@ export type BaseBoxProps = BoxCssProps & {
   padding?: SpacingKey | string | number;
 };
 
-export type BoxProps = BaseBoxProps & React.DOMAttributes<HTMLDivElement>;
+export type BoxProps<E extends Element = HTMLDivElement> = BaseBoxProps & React.DOMAttributes<E>;

@@ -2,16 +2,7 @@ import styled from 'styled-components';
 import Box from '../../layout/Box';
 import { TextProps, LinkProps } from './Text.types';
 import { Link as ReactRouterLink } from "react-router-dom";
-
-function propToCss(key: string, value?: string | number, suffix: string = 'px') {
-    if (value === undefined) {
-        return "";
-    }
-    if (typeof value === "string") {
-        return `${key}: ${value};`;
-    }
-    return `${key}: ${value}${suffix};`;
-}
+import propToCss from '../../../utils/propToCss';
 
 const Text = styled(Box).attrs(() => ({
     as: "span"
