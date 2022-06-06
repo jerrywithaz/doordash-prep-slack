@@ -1,1 +1,1 @@
-export { default, Link } from './Text';
+export { default, Link } from './Text.styled';

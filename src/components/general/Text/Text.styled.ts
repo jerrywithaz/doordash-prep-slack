@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import { StyledTextProps } from './Text.types';
+import Box from '../../layout/Box';
+import { TextProps, LinkProps } from './Text.types';
+import { Link as ReactRouterLink } from "react-router-dom";
 
 function propToCss(key: string, value?: string | number, suffix: string = 'px') {
     if (value === undefined) {
@@ -11,15 +13,21 @@ function propToCss(key: string, value?: string | number, suffix: string = 'px') 
     return `${key}: ${value}${suffix};`;
 }
 
-export const Text = styled.span<StyledTextProps>`
-    ${({ color, padding, margin, fontWeight, display, flex, marginRight }) => `
+const Text = styled(Box).attrs(() => ({
+    as: "span"
+}))<TextProps>`
+    ${({ color, displayBlock, fontWeight, bold, display }) => `
         ${propToCss("color", color)}
-        ${propToCss("padding", padding)}
-        ${propToCss("margin", margin)}
-        ${propToCss("margin-right", marginRight)}
-        ${propToCss("font-weight", fontWeight, "")}
-        ${propToCss("display", display, "")}
-        ${propToCss("flex", flex, "")}
+        ${propToCss("font-weight", bold ? "bold" : fontWeight, "")}
+        ${propToCss("display", displayBlock ? "block" : display, "")}
         text-decoration: none;
     `}
 `;
+
+export const Link = styled(Text).attrs(() => ({
+    as: ReactRouterLink
+}))<LinkProps>`
+    text-decoration: none;
+`;
+
+export default Text;

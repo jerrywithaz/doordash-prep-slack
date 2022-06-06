@@ -23,16 +23,16 @@ const Channel: React.FC = () => {
 
   const renderItem = useCallback((item: Message) => {
     return (
-      <Box horizontal padding={10} key={item.id}>
+      <Box horizontal padding="s" key={item.id}>
         <Box
           width={40}
           height={40}
           backgroundColor="gray"
-          margin="0px 10px 0px 0px"
+          marginRight="s"
         />
         <Box vertical flex={1}>
             <Box horizontal>
-                <Text color="#ffffff" marginRight={10} bold>{item.user.name}</Text>
+                <Text color="#ffffff" marginRight="s" bold>{item.user.name}</Text>
                 <Text color="#ffffff">{new Date(item.date).toLocaleTimeString()}</Text>
             </Box>
           <Text color="#ffffff">{item.content}</Text>

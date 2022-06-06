@@ -45,13 +45,13 @@ const Sidebar: React.FC = () => {
     const isActive = matchPath && matchPath.pathname === url;
 
     return (
-      <Box horizontal padding="10px" key={item.name} backgroundColor={isActive ? "red" : undefined}>
+      <Box horizontal padding="s" key={item.name} backgroundColor={isActive ? "red" : undefined}>
         <Link flex={1} to={`/channel/${item.id}`}>
           {item.type === "channel" && (
             <Text
               color="#ffffff"
               bold={item.unread_messages}
-              margin="0px 4px 0px 0px"
+              marginRight="xs"
             >
               #
             </Text>

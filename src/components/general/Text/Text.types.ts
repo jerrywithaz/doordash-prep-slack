@@ -1,18 +1,13 @@
 import React from "react";
-import { StyledComponentProps } from "styled-components";
 import { LinkProps as ReactRouterLinkProps } from 'react-router-dom';
+import { BaseBoxProps } from "../../layout/Box";
 
 export type TextCssProps = Pick<
   React.CSSProperties,
   "display" | "padding" | "margin" | "fontWeight" | "flex" | "marginRight"
 >;
 
-export type StyledTextProps = TextCssProps & {
-  color?: string;
-  bold?: boolean;
-};
-
-export type TextProps = TextCssProps & {
+export type TextProps = BaseBoxProps &  TextCssProps & {
   color?: string;
   bold?: boolean;
   displayBlock?: boolean;
